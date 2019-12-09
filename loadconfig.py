@@ -33,7 +33,13 @@ class GetConfig(object):
 	def readJson(self):
 		with open('config.json') as config_file:
 			data = json.load(config_file)
-		setStart(data['start'])
-		setEnd(self.end = data['end'])
-		setPath(self.path = data['path'])
-		setChannels(self.channels = data['channels'])
+		self.setStart(data['start'])
+		self.setEnd(data['end'])
+		self.setPath(data['path'])
+		self.setChannels(data['channels'])
+	
+	def printConfig(self):
+		print(self.getStart())
+		print(self.getEnd())
+		print(self.getPath())
+		print(self.getChannels())
