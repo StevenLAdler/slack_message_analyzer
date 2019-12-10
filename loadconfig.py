@@ -3,6 +3,7 @@ class GetConfig(object):
 	def __init__(self):
 		self.start = ""
 		self.end = ""
+		self.inc = ""
 		self.path = ""
 		self.channels = []
 		
@@ -17,6 +18,12 @@ class GetConfig(object):
 		
 	def setEnd(self, end):
 		self.end = end
+		
+	def getIncrement(self):
+		return self.end
+		
+	def setIncrement(self, inc):
+		self.inc = inc
 		
 	def getPath(self):
 		return self.path
@@ -35,11 +42,14 @@ class GetConfig(object):
 			data = json.load(config_file)
 		self.setStart(data['start'])
 		self.setEnd(data['end'])
+		#can be set to 'day', 'week', 'month'. increment of each data point.
+		self.setIncrement(data['increment']) 
 		self.setPath(data['path'])
 		self.setChannels(data['channels'])
 	
 	def printConfig(self):
 		print(self.getStart())
 		print(self.getEnd())
+		print(self.getIncrement())
 		print(self.getPath())
 		print(self.getChannels())
