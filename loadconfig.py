@@ -4,6 +4,7 @@ class GetConfig(object):
 		self.start = ""
 		self.end = ""
 		self.inc = ""
+		self.cont = False
 		self.path = ""
 		self.channels = []
 		
@@ -25,6 +26,15 @@ class GetConfig(object):
 	def setIncrement(self, inc):
 		self.inc = inc
 		
+	def getCont(self):
+		return self.cont
+		
+	def setCont(self, cont):
+		if cont == "True":
+			self.cont = True
+		elif cont == "False":
+			self.cont = False
+		
 	def getPath(self):
 		return self.path
 		
@@ -37,6 +47,8 @@ class GetConfig(object):
 	def setChannels(self, channels):
 		self.channels = channels
 		
+	#def validateInput(self):
+		
 	def readJson(self):
 		with open('config.json') as config_file:
 			data = json.load(config_file)
@@ -44,6 +56,8 @@ class GetConfig(object):
 		self.setEnd(data['end'])
 		#can be set to 'day', 'week', 'month'. increment of each data point.
 		self.setIncrement(data['increment']) 
+		#continue to nearest full increment?
+		self.setCont(data['cont'])
 		self.setPath(data['path'])
 		self.setChannels(data['channels'])
 	
@@ -51,5 +65,6 @@ class GetConfig(object):
 		print(self.getStart())
 		print(self.getEnd())
 		print(self.getIncrement())
+		print(self.getCont())
 		print(self.getPath())
 		print(self.getChannels())
