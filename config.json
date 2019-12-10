@@ -1,7 +1,7 @@
 {
-	"start" 	: "2018-12-10",
-	"end"		: "2019-12-31",
-	"increment"	: "week",
+	"start" 	: "2018-12-12",
+	"end"		: "2019-12-06",
+	"increment"	: "month",
 	"cont"		: "True",
 	"path"		: "./export",
 	"channels"	: ["real-good-gamers", "video-games"]

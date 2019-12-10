@@ -69,4 +69,44 @@ for item in channels:
 				if day<=e_date or cont:
 					cnt += countMessages(f"{folder}/{day}.json")
 			msg_data[item].append((f"{one_mon[0]}",cnt))
-print(msg_data)
+
+
+#TODO seperate graphing into seperate file, make it look better also
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+
+plt.plot(*zip(*msg_data["real-good-gamers"]), c='b', marker="s", label='#real-good-gamers')
+plt.plot(*zip(*msg_data["video-games"]), c='r', marker="o", label='#video-games')
+plt.legend(loc='upper left');
+
+
+
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
