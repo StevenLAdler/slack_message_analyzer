@@ -1,7 +1,7 @@
 {
 	"start" 	: "2000-01-01",
 	"end"		: "2020-12-31",
-	"increment"	: "week",
+	"increment"	: "day",
 	"path"		: "./export",
 	"channels"	: ["real-good-gamers", "video-games"]
 }

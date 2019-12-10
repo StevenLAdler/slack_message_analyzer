@@ -20,7 +20,7 @@ class GetConfig(object):
 		self.end = end
 		
 	def getIncrement(self):
-		return self.end
+		return self.inc
 		
 	def setIncrement(self, inc):
 		self.inc = inc
