@@ -8,7 +8,7 @@ from loadconfig import GetConfig
 
 #declare dict
 msg_data = {}
-
+ 
 def countMessages(path):
 	count = 0
 	try:
